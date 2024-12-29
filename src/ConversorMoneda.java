@@ -9,14 +9,14 @@ import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 
 public class ConversorMoneda {
-    private static final String API = "cur_live_ugIQUVf7CH7l2uack9ejd4X375OZJqqw7iUhsjaw";
-    private static final String URL = "https://api.currencyapi.com/v3/latest?apikey=cur_live_ugIQUVf7CH7l2uack9ejd4X375OZJqqw7iUhsjaw&currencies=EUR%2CUSD%2CCAD&base_currency=ALL";
+    private static final String API_LLAVE = "cur_live_ugIQUVf7CH7l2uack9ejd4X375OZJqqw7iUhsjaw";
+    private static final String URL_LINK = "https://api.currencyapi.com/v3/latest?apikey=cur_live_ugIQUVf7CH7l2uack9ejd4X375OZJqqw7iUhsjaw&currencies=EUR%2CUSD%2CCAD&base_currency=ALL";
 
     public static double convertir(String monedaOrigen, String monedaDestino) throws IOException, InterruptedException {
         HttpClient client = HttpClient.newHttpClient();
         HttpRequest request = HttpRequest.newBuilder()
-                .uri(URI.create(BASE_URL))
-                .header("apikey", API_KEY)
+                .uri(URI.create(URL_LINK))
+                .header("apikey", API_LLAVE)
                 .header("currencies", monedaDestino)
                 .header("base_currency", monedaOrigen)
                 .build();
